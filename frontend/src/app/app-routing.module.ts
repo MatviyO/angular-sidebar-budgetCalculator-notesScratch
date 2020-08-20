@@ -8,7 +8,8 @@ import {LayoutComponent} from "./layout/layout.component";
 const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
-      {path: '', component: DashboardComponent},
+      {path: '', redirectTo: '/dashboard', pathMatch:'full'},
+      {path: 'dashboard', component: DashboardComponent},
       {path: 'calculator', component: CalculatorComponent},
       {path: 'notes', component: NotesComponent}
     ]
