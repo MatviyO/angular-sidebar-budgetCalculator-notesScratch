@@ -1,0 +1,25 @@
+.budget-item-section {
+  display: flex;
+ padding: 50px;
+
+
+  .budget-items-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 780px;
+    height: 100%;
+    width: 100%;
+
+    .income-column, expenses-column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 0;
+      flex-grow: 1;
+
+    }
+    .income-column {
+      margin-right: 35px;
+    }
+  }
+}

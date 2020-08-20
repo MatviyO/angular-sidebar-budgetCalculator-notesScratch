@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {CalculatorComponent} from "./calculator/calculator.component";
-import {NotesComponent} from "./notes/notes.component";
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {CalculatorComponent} from "./pages/calculator/calculator.component";
+import {NotesComponent} from "./pages/notes/notes.component";
 import {LayoutComponent} from "./layout/layout.component";
 
 const routes: Routes = [
