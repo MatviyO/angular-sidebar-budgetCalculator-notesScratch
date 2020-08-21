@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { AddItemComponent } from './shared/component/add-item/add-item.component';
 import { ItemListComponent } from './shared/component/item-list/item-list.component';
 import { ItemCardComponent } from './shared/component/item-card/item-card.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ItemCardComponent } from './shared/component/item-card/item-card.compon
   ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

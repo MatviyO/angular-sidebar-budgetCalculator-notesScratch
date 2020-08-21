@@ -1,4 +1,4 @@
-<form action="">
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
   <div class="field is-horizontal">
     <div class="field-body">
       <div class="field">
@@ -16,7 +16,7 @@
       <div class="field">
         <div class="contorl">
           <br>
-         <button class="button">Add</button>
+         <button type="submit" class="button">Add</button>
         </div>
       </div>
     </div>

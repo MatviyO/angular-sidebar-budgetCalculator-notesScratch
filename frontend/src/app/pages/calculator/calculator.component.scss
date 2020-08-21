@@ -30,7 +30,7 @@
   .item-list-section {
     margin-top: 15px;
     @extend %for-position;
-    height: 250px;
+    min-height: 250px;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
   }
