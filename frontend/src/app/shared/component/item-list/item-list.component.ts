@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ItemModel} from "../../models/item.model";
+import {MatDialog} from '@angular/material/dialog';
+import {EditItemComponent} from "../edit-item/edit-item.component";
 
 @Component({
   selector: 'app-item-list',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor() { }
+  @Input() items: ItemModel[];
+  @Output() deleteElem: EventEmitter<ItemModel> = new EventEmitter<ItemModel>();
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+  deleteItem(item: ItemModel) {
+    this.deleteElem.emit(item);
+
+  }
+  onCardClick(item: ItemModel) {
+    const dialogRef = this.dialog.open(EditItemComponent, {
+      width: '580px',
+      data: item
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.items[this.items.indexOf(item)] = result;
+      }
+    })
   }
 
 }

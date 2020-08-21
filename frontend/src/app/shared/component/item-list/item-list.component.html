@@ -3,17 +3,25 @@
 
     <div class="income-column">
       <h3>Income</h3>
-      <app-item-card [isIncome]="true"></app-item-card>
-      <app-item-card></app-item-card>
-      <app-item-card></app-item-card>
-      <app-item-card></app-item-card>
-      <app-item-card></app-item-card>
-
+      <div *ngFor="let  item of items">
+        <app-item-card [item]="item"
+                       (deleteClick)="deleteItem(item)"
+                       *ngIf="item.amount >= 0"
+                       (cardLick)="onCardClick()"
+        >
+        </app-item-card>
+      </div>
     </div>
     <div class="income-column">
       <h3>Express</h3>
-      <app-item-card></app-item-card>
-      <app-item-card></app-item-card>
+      <div *ngFor="let item of items">
+        <app-item-card [item]="item"
+                       (deleteClick)="deleteItem(item)"
+                       (cardLick)="onCardClick()"
+                       *ngIf="item.amount < 0"
+        ></app-item-card>
+      </div>
     </div>
+
   </div>
 </div>
