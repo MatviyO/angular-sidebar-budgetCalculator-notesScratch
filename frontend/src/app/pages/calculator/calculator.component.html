@@ -7,14 +7,17 @@
     <h3>Budget</h3>
   </div>
 
-  <section class="total-budget-section gr">
-      <h4> <strong style="color: white">Total</strong> :1500</h4>
+  <section class="total-budget-section "
+           [ngClass]="{'red' : total < 0, 'gr': total > 0}">
+      <h4> <strong style="color: white">Total:</strong> {{total}}</h4>
   </section>
 
   <section class="add-item-section">
     <app-add-item (formSubmit)="addItem($event)"></app-add-item>
   </section>
   <section class="item-list-section">
-    <app-item-list (deleteElem)="deleteItem($event)" [items]="items"></app-item-list>
+    <app-item-list
+      (update)="updateItem($event)"
+      (deleteElem)="deleteItem($event)" [items]="items"></app-item-list>
   </section>
 </div>

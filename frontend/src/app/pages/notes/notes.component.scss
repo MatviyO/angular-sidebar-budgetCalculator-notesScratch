@@ -1,0 +1,47 @@
+%for-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content-header {
+  font-size: 26px;
+}
+.content-body {
+  @extend %for-position;
+  flex-direction: column;
+  &__header {
+    font-size: 22px;
+  }
+  .total-budget-section {
+    @extend %for-position;
+    height: 250px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: 35px;
+  }
+  .add-item-section {
+    margin-top: 15px;
+    @extend %for-position;
+    height: 120px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .item-list-section {
+    margin-top: 15px;
+    @extend %for-position;
+    min-height: 250px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+}
+.gr {
+  color: #00cc86;
+}
+.red {
+  color: red;
+
+}

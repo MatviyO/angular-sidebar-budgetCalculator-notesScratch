@@ -16,7 +16,10 @@
       <div class="field">
         <div class="contorl">
           <br>
-         <button type="submit" [disabled]="!itemForm.valid" class="button">Add</button>
+         <button type="submit" [ngClass]="{'is-primary': isNewItem, 'is-success': !isNewItem}" [disabled]="!itemForm.valid" class="button">
+          <p *ngIf="isNewItem">Add</p>
+           <p *ngIf="!isNewItem">Save</p>
+         </button>
         </div>
       </div>
     </div>

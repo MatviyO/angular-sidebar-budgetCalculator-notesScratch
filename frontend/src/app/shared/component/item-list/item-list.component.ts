@@ -3,15 +3,24 @@ import {ItemModel} from "../../models/item.model";
 import {MatDialog} from '@angular/material/dialog';
 import {EditItemComponent} from "../edit-item/edit-item.component";
 
+export interface UpdateEvent {
+  old: ItemModel;
+  new: ItemModel;
+
+}
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.scss']
 })
+
+
 export class ItemListComponent implements OnInit {
 
   @Input() items: ItemModel[];
   @Output() deleteElem: EventEmitter<ItemModel> = new EventEmitter<ItemModel>();
+  @Output() update: EventEmitter<UpdateEvent> = new EventEmitter<UpdateEvent>();
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -27,7 +36,10 @@ export class ItemListComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.items[this.items.indexOf(item)] = result;
+        this.update.emit({
+          old: item,
+          new: result
+        })
       }
     })
   }

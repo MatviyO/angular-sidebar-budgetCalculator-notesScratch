@@ -19,6 +19,8 @@
     height: 250px;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: 35px;
   }
   .add-item-section {
     margin-top: 15px;
@@ -35,12 +37,11 @@
     background: rgba(0, 0, 0, 0.2);
   }
 
-
-
-
 }
 .gr {
   color: #00cc86;
-  font-weight: bold;
-  font-size: 35px;
+}
+.red {
+  color: red;
+
 }
