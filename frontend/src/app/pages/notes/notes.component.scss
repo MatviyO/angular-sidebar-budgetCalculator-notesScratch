@@ -15,12 +15,22 @@
     font-size: 22px;
   }
   .total-budget-section {
-    @extend %for-position;
+    padding: 25px;
+
     min-height: 750px;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
     font-weight: bold;
     font-size: 35px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .filter {
+      padding-top: 25px;
+      width: 70%;
+    }
+
   }
   .add-item-section {
     margin-top: 15px;

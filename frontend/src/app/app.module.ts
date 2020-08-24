@@ -15,6 +15,10 @@ import {EditItemComponent} from './shared/component/edit-item/edit-item.componen
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatDialogModule} from '@angular/material/dialog';
 import { NoteLsitComponent } from './pages/notes/note-list/note-lsit.component';
+import { AddNotesComponent } from './pages/notes/add-notes/add-notes.component';
+import { EditNotesComponent } from './pages/notes/edit-notes/edit-notes.component';
+import { NoteFilterComponent } from './pages/notes/note-filter/note-filter.component';
+import { NoteCardComponent } from './pages/notes/note-card/note-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { NoteLsitComponent } from './pages/notes/note-list/note-lsit.component';
     ItemListComponent,
     ItemCardComponent,
     EditItemComponent,
-    NoteLsitComponent
+    NoteLsitComponent,
+    AddNotesComponent,
+    EditNotesComponent,
+    NoteFilterComponent,
+    NoteCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+.note-card-container {
+  border-radius: 5px;
+  margin: 10px 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .note-card-content {
+    background-color: rgba(0, 0, 0, 0.2);
+
+    padding: 10px;
+
+    .note-card-title {
+      font-weight: bold;
+    }
+  }
+}
+

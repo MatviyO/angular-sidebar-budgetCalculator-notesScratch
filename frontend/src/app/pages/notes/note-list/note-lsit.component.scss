@@ -1,0 +1,18 @@
+.budget-item-section {
+  display: flex;
+  min-width: 640px;
+  min-height: 100%;
+  padding: 50px;
+
+
+  .budget-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 780px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(35, 42, 58);;
+
+  }
+}
