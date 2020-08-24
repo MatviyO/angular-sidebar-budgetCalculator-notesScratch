@@ -14,6 +14,7 @@ import {FormsModule} from "@angular/forms";
 import {EditItemComponent} from './shared/component/edit-item/edit-item.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatDialogModule} from '@angular/material/dialog';
+import { NoteLsitComponent } from './pages/notes/note-list/note-lsit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AddItemComponent,
     ItemListComponent,
     ItemCardComponent,
-    EditItemComponent
+    EditItemComponent,
+    NoteLsitComponent
   ],
   imports: [
     BrowserModule,

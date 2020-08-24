@@ -16,7 +16,7 @@
   }
   .total-budget-section {
     @extend %for-position;
-    height: 250px;
+    min-height: 750px;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
     font-weight: bold;
