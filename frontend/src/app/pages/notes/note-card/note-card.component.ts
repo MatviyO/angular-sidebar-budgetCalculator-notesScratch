@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-card.component.scss']
 })
 export class NoteCardComponent implements OnInit {
+  @Input() body;
+  @Input() title;
+
 
   constructor() { }
 

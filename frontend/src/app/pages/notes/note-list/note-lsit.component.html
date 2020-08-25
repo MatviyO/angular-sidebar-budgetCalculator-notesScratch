@@ -1,7 +1,16 @@
+<div class="filter">
+  <app-note-filter></app-note-filter>
+</div>
 <div class="budget-item-section">
   <div class="budget-items-container">
-    <app-note-card></app-note-card>
-    <app-note-card></app-note-card>
-    <app-note-card></app-note-card>
+    <app-note-card
+      *ngFor="let note of notes; index as i "
+      [routerLink]="i"
+      [title]="note.title"
+      [body]="note.body"></app-note-card>
+
   </div>
+</div>
+<div class="footer-but">
+  <button class="button" routerLink="new">Add</button>
 </div>

@@ -19,6 +19,7 @@ import { AddNotesComponent } from './pages/notes/add-notes/add-notes.component';
 import { EditNotesComponent } from './pages/notes/edit-notes/edit-notes.component';
 import { NoteFilterComponent } from './pages/notes/note-filter/note-filter.component';
 import { NoteCardComponent } from './pages/notes/note-card/note-card.component';
+import {NotesService} from "./shared/services/notes.service";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { NoteCardComponent } from './pages/notes/note-card/note-card.component';
     MatDialogModule
 
   ],
-  providers: [],
+  providers: [NotesService],
   entryComponents: [EditItemComponent],
   bootstrap: [AppComponent]
 })

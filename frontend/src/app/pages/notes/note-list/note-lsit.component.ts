@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NoteModel} from "../../../shared/models/note.model";
+import {NotesService} from "../../../shared/services/notes.service";
 
 @Component({
   selector: 'app-note-lsit',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteLsitComponent implements OnInit {
 
-  constructor() { }
+  notes: NoteModel[] = new Array<NoteModel>();
+  constructor(private notesService: NotesService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.notes = this.notesService.getAll();
   }
 
 }

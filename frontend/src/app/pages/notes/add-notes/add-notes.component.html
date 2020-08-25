@@ -1,1 +1,21 @@
-<p>add-notes works!</p>
+
+<div class="budget-item-section">
+  <div class="budget-items-container">
+
+    <div class="form-container">
+      <form #noteForm="ngForm" (ngSubmit)="onSubmit(noteForm)" >
+        <div class="field">
+          <input type="text" name="title" [ngModel]="note.title" required class="input">
+
+        </div>
+        <div class="field">
+          <textarea name="body" class="textarea"[ngModel]="note.body" ></textarea>
+        </div>
+        <div class="field is-grouped is-pulled-right">
+          <button class="button mr-4" type="button" routerLink="/notes">Cancel</button>
+          <button class="button is-primary" [disabled]="!noteForm.valid" type="submit">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

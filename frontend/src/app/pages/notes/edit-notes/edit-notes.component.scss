@@ -1,0 +1,51 @@
+.input {
+  background-color: #232a3a;
+  color: white;
+  border-color: thistle;
+
+
+}
+::placeholder {
+  color: white;
+}
+.button {
+  background-color: #232a3a;
+  color: white;
+  border-color: thistle;
+}
+.textarea {
+  background-color: #232a3a;
+  color: white;
+  border-color: thistle;
+
+}
+.budget-item-section {
+  display: flex;
+  min-width: 640px;
+  min-height: 100%;
+  padding: 50px;
+
+
+  .budget-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 780px;
+    height: 100%;
+    width: 100%;
+
+
+    .is-primary {
+      background: #6fe271;
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+input, textarea {
+  &.ng-invalid.ng-touched {
+    border-color: red;
+  }
+}
+
+
