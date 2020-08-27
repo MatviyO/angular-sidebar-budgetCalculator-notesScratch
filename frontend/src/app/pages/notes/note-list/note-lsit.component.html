@@ -2,7 +2,7 @@
   <app-note-filter></app-note-filter>
 </div>
 <div class="budget-item-section">
-  <div class="budget-items-container">
+  <div class="budget-items-container" [@listAnim]>
     <app-note-card
       *ngFor="let note of notes; index as i "
       [link]="i"

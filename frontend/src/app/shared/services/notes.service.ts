@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {NoteModel} from "../models/note.model";
+import {element} from "protractor";
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,36 @@ export class NotesService {
 
   delete(id:number) {
     this.notes.splice(id, 1)
+  }
+  filter(query: string) {
+    query = query.toLowerCase().trim();
+
+    let allREsults: NoteModel[] = new Array<NoteModel>()
+    let terms: string[] = query.split(' ');
+    terms = this.removeDuplicaess(terms);
+    terms.forEach(element => {
+
+    })
+
+
+
+  }
+  removeDuplicaess(arr: Array<any>): Array<any> {
+    let uniqueResults: Set<any> = new Set<any>();
+    arr.forEach(e => uniqueResults.add(e))
+
+    return Array.from(uniqueResults)
+  }
+
+  relevateNotes(query: any): Array<NoteModel> {
+    query = query.toLowerCase().trim();
+    let relevantNotes = this.notes.filter(note => {
+      if(note.body.toLowerCase().includes(query || note.title.toLowerCase().includes(query))) {
+        return true
+      }
+       return false
+    })
+
+    return relevantNotes
   }
 }
