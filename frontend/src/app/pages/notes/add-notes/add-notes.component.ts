@@ -18,6 +18,7 @@ export class AddNotesComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
+      this.note = new NoteModel();
       if (params.id) {
         this.note = this.notesService.get(params.id);
         this.noteId = params.id;
@@ -27,17 +28,16 @@ export class AddNotesComponent implements OnInit {
       }
     })
 
-    this.note = new NoteModel();
+
   }
 
   onSubmit(form: NgForm) {
     if (this.newN) {
       this.notesService.add(form.value)
-      this.router.navigate(['/notes']);
+
     } else {
       this.notesService.update(this.noteId, form.value.title,form.value.body)
     }
-
-
+    this.router.navigate(['/notes']);
   }
 }

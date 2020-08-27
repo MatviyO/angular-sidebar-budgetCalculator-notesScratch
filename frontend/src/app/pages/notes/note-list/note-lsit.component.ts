@@ -15,5 +15,8 @@ export class NoteLsitComponent implements OnInit {
   ngOnInit() {
     this.notes = this.notesService.getAll();
   }
+  deleteNote(id: number) {
+    this.notesService.delete(id);
+  }
 
 }

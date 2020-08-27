@@ -5,10 +5,11 @@
   <div class="budget-items-container">
     <app-note-card
       *ngFor="let note of notes; index as i "
-      [routerLink]="i"
+      [link]="i"
+      (delete)="deleteNote(i)"
       [title]="note.title"
-      [body]="note.body"></app-note-card>
-
+      [body]="note.body"
+    ></app-note-card>
   </div>
 </div>
 <div class="footer-but">
