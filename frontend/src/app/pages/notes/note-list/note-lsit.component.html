@@ -1,10 +1,17 @@
 <div class="filter">
-  <app-note-filter></app-note-filter>
+  <div class="content-body__header">
+    <div class="field">
+      <div class="contorl wz">
+        <input type="text" required id="Search" name="Search" (keyup)="filter($event.target.value)" class="input" placeholder="Search..." >
+
+      </div>
+    </div>
+  </div>
 </div>
 <div class="budget-item-section">
   <div class="budget-items-container" [@listAnim]>
     <app-note-card
-      *ngFor="let note of notes; index as i "
+      *ngFor="let note of filteredNotes; index as i "
       [link]="i"
       [@itemAnim]
       (delete)="deleteNote(i)"
