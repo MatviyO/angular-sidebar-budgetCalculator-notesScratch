@@ -20,7 +20,8 @@ import { EditNotesComponent } from './pages/notes/edit-notes/edit-notes.componen
 import { NoteFilterComponent } from './pages/notes/note-filter/note-filter.component';
 import { NoteCardComponent } from './pages/notes/note-card/note-card.component';
 import {NotesService} from "./shared/services/notes.service";
-
+import {NgxEchartsModule} from "ngx-echarts";
+import * as echarts from 'echarts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +39,17 @@ import {NotesService} from "./shared/services/notes.service";
     NoteFilterComponent,
     NoteCardComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    AppRoutingModule,
-    MatDialogModule
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        AppRoutingModule,
+        MatDialogModule,
+        NgxEchartsModule.forRoot({
+           echarts,
+         })
 
-  ],
+    ],
   providers: [NotesService],
   entryComponents: [EditItemComponent],
   bootstrap: [AppComponent]
